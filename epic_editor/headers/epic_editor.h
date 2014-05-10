@@ -14,12 +14,22 @@
 #define GREN "\033[0;32m"
 #define BLUE "\033[0;36m"
 
+#define MAGIC_NUMBER "123"
+
+#include <fcntl.h>
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
 #include "../libmy/my.h"
 
-typedef struct champ_s
+typedef struct s_header
+{
+  char		*name;
+  char		*win;
+  char		*spawn;
+}t_header;
+
+typedef struct s_champ
 {
   char		*name;
   char		*type;
@@ -29,9 +39,9 @@ typedef struct champ_s
   int		dmg;
   char		*weapon;
   char		*armor;
-}champ_t;
+}t_champ;
 
-typedef struct monster_s
+typedef struct s_monster
 {
   char		*type;
   int		hp;
@@ -40,12 +50,12 @@ typedef struct monster_s
   int		dmg;
   char		*weapon;
   char		*armor;
-}monster_t;
+}t_monster;
 
-typedef struct room_s
+typedef struct s_room
 {
   char		*name;
   char		*adv;
   char		*connect;
   char		*monsters;
-}room_t;
+}t_room;
