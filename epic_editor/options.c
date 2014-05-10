@@ -5,7 +5,7 @@
 ** Login        weisli_r
 **
 ** Started on   Sat May 10 13:36:00 2014 weisli_r
-** Update       Sat May 10 16:19:35 2014 weisli_r
+** Update       Sat May 10 16:22:25 2014 weisli_r
 */
 
 #include <stdlib.h>
@@ -57,11 +57,7 @@ int		create_champ(int fd)
 	}
 	else
 	{
-<<<<<<< HEAD
 	  if (get_champ(s, fd) != -1)
-=======
-	  if ((get_champ(s, fd)) != -1)
->>>>>>> origin/master
 	  {
 		my_puts("   Champion added !\n");
 		return (0);
@@ -88,11 +84,7 @@ int		create_monster(int fd)
 	}
 	else
 	{
-<<<<<<< HEAD
-	  if ((fd = get_monster(s, fd)) != -1)
-=======
-	  if ((get_monster(s, fd)) != -1)
->>>>>>> origin/master
+	  if (get_monster(s, fd) != -1)
 	  {
 		my_puts("   Monster added !\n");
 		return (0);
