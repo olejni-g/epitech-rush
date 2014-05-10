@@ -12,10 +12,12 @@ NAME	= epic_editor
 
 RM		= rm -f
 
-SRCS	= main.c				\
-		options.c				\
-		sections/get_header.c	\
-	sections/get_champ.c
+SRCS	= main.c			\
+	  options.c			\
+	  sections/get_header.c		\
+	  sections/get_champ.c		\
+	  sections/get_monster.c	\
+	  sections/get_room.c
 
 OBJS	= $(SRCS:.c=.o)
 

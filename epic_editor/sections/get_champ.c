@@ -5,12 +5,17 @@
 ** Login   <wilfried@epitech.net>
 ** 
 ** Started on  Sat May 10 11:52:34 2014 HENNUYER WILFRIED
-** Last update Sat May 10 13:38:55 2014 HENNUYER WILFRIED
+** Last update Sat May 10 15:47:07 2014 HENNUYER WILFRIED
 */
 
+#include <stdlib.h>
+#include <stdio.h>
+#include <unistd.h>
+#include <string.h>
 #include <epic_editor.h>
+#include <my.h>
 
-int		check_len_line(char **line)
+int		check_len_champ(char **line)
 {
   int		i;
 
@@ -18,7 +23,7 @@ int		check_len_line(char **line)
 
   if (tab_len(line) != LEN_CHAMP)
     {
-      my_puts(ERROR_CHAMP);
+      my_puts(ERR_TOOMANY);
       return (-1);
     }
   while (line[i])
@@ -50,12 +55,12 @@ int		write_champ_next(char **line, int fd)
   write(fd, &nb, sizeof(char));
   nb = strlen(line[8]);
   write(fd, &nb, sizeof(char));
-  write(fd, line[0], nb);
+  write(fd, line[8], nb);
   nb = 9;
   write(fd, &nb, sizeof(char));
   nb = strlen(line[9]);
   write(fd, &nb, sizeof(char));
-  write(fd, line[0], nb);
+  write(fd, line[9], nb);
   return (0);
 }
 
@@ -90,7 +95,7 @@ int		get_champ(char *str, int fd)
   char		**line;
 
   line = my_str_to_wordtab(str, "|");
-  if (check_len_line(line) == -1)
+  if (check_len_champ(line) == -1)
     return (-1);
   write_champ(line, fd);
   return (0);

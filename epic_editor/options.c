@@ -1,5 +1,5 @@
 /*
-** options.c for epic_editor in /home/closingin/documents/projects/epitech/rush_rpg/epic_editor
+** options.c for epic_editor in /home/closingin/documents/projects/
 **
 ** Made by      Rémi WEISLINGER
 ** Login        weisli_r
@@ -57,7 +57,7 @@ void	create_champ(int fd)
 	}
 	else
 	{
-	  if ((fd = get_header(s)) != -1)
+	  if ((get_champ(s, fd)) != -1)
 	  {
 		my_puts("   Champion added !\n");
 	  }
@@ -82,7 +82,7 @@ void create_monster(int fd)
 	}
 	else
 	{
-	  if ((fd = get_monster(s)) != -1)
+	  if ((get_monster(s, fd)) != -1)
 	  {
 		my_puts("   Monster added !\n");
 	  }
