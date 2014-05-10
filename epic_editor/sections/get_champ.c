@@ -5,7 +5,7 @@
 ** Login   <wilfried@epitech.net>
 ** 
 ** Started on  Sat May 10 11:52:34 2014 HENNUYER WILFRIED
-** Last update Sat May 10 15:47:07 2014 HENNUYER WILFRIED
+** Last update Sat May 10 15:59:46 2014 HENNUYER WILFRIED
 */
 
 #include <stdlib.h>
@@ -68,6 +68,8 @@ int		write_champ(char **line, int fd)
 {
   int		nb;
 
+  nb = 0x0C;
+  write(fd, &nb, sizeof(char));
   nb = 1;
   write(fd, &nb, sizeof(char));
   nb = strlen(line[0]);
