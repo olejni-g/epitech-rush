@@ -14,17 +14,11 @@
 #define GREN "\033[0;32m"
 #define BLUE "\033[0;36m"
 
-<<<<<<< HEAD
 #define MAGIC_NUMBER 123
 
-#define ERROR_HEADER "Learn to read idiot, your header is invalid"
-#define ERROR_CHAMP "Learn to read idiot, your champ is invalid"
+#define ERROR_HEADER "   Learn to read idiot, your header is invalid"
+#define ERROR_CHAMP "   Learn to read idiot, your champ is invalid"
 
-=======
-#define MAGIC_NUMBER	"123"
-#define ERROR_HEADER	"Learn to read idiot, your header is invalid"
-#define ERROR_CHAMP		"Learn to read idiot, your champ is invalid"
->>>>>>> cfd1f6dad1001fbcb43f3ea50dc564dc20ed252c
 #define LEN_CHAMP 8
 #define LEN_MONSTER 7
 #define LEN_ROOM 4

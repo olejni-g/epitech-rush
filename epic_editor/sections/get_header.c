@@ -5,7 +5,7 @@
 ** Login   <wilfried@epitech.net>
 ** 
 ** Started on  Sat May 10 10:38:45 2014 HENNUYER WILFRIED
-** Last update Sat May 10 13:19:49 2014 HENNUYER WILFRIED
+** Last update Sat May 10 13:27:14 2014 HENNUYER WILFRIED
 */
 
 #include <epic_editor.h>
@@ -14,15 +14,6 @@ int		write_header_next(char **line, int fd)
 {
   int		nb;
 
-<<<<<<< HEAD:epic_editor/get_header.c
-=======
-  if ((fd = open(header->name, O_RDWR | O_CREAT, 00644)) == 0)
-    {
-      my_puts("Fail open, try again.");
-      return (-1);
-    }
-  write(fd, MAGIC_NUMBER, sizeof(char));
->>>>>>> cfd1f6dad1001fbcb43f3ea50dc564dc20ed252c:epic_editor/sections/get_header.c
   nb = 1;
   write(fd, &nb, sizeof(char));
   nb = strlen(line[0]);
