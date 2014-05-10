@@ -1,11 +1,39 @@
 ##
-## Makefile for rush_rpg in /home/closingin/documents/projects/epitech/rush_rpg
-##
-## Made by      Rémi WEISLINGER
-## Login        weisli_r
-##
-## Started on   Sat May 10 00:22:03 2014 weisli_r
-## Update       Sat May 10 00:23:32 2014 weisli_r
+## Makefile for rush in /home/brunau_b/rendu/epitech-rush/js_server
+## 
+## Made by Brunaud benoit
+## Login   <brunau_b@epitech.net>
+## 
+## Started on  Sat May 10 14:43:05 2014 Brunaud benoit
+## Last update Sat May 10 15:42:34 2014 Brunaud benoit
 ##
 
-NAME = js_server
+NAME	= js_server
+
+RM	= rm -f
+
+SRCS	= main.c
+
+OBJS	= $(SRCS:.c=.o)
+
+CFLAGS	+= -Wextra -Wall -Werror -g -W
+CFLAGS	+= -ansi -pedantic
+CFLAGS	+= -I headers
+CFLAGS	+= -I libmy
+
+LDFLAGS	+= -L lib -l my
+
+all: $(NAME)
+
+$(NAME): $(OBJS)
+	cc $(OBJS) -o $(NAME) $(LDFLAGS)
+
+clean:
+	$(RM) $(OBJS)
+
+fclean: clean
+	$(RM) $(NAME)
+
+re: fclean all
+
+.PHONY: all clean fclean re
