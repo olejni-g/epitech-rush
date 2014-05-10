@@ -1,0 +1,4 @@
+#!/bin/sh
+
+blih -u sejour_a repository create epic_js_fantasy
+blih -u sejour_a repository setacl epic_js_fantasy rush
