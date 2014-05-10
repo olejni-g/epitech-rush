@@ -1,5 +1,5 @@
 /*
-** main.c for epic_editor in /home/closingin/documents/projects/epitech/rush_rpg/epic_editor
+** main.c for epic_editor in anywhere
 **
 ** Made by      Rémi WEISLINGER
 ** Login        weisli_r
@@ -16,6 +16,7 @@ int		main()
   char	*s;
   char	**wordtab;
 
+<<<<<<< HEAD
   my_puts("Welcome to the world editor");
   my_puts("Enter game file name :");
   s = my_getline(0);
@@ -25,5 +26,16 @@ int		main()
 	printf("%s\n", wordtab[i]);
 	i++;
   }
+=======
+  my_puts("Reading standard input");
+  while ((s = my_getline(0)))
+    {
+      if (s[0] != '\n')
+	{
+	  my_parse(s);
+	}
+      free(s);
+    }
+>>>>>>> origin/master
   return (0);
 }
