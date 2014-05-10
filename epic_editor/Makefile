@@ -18,7 +18,7 @@ SRCS	= main.c \
 OBJS	= $(SRCS:.c=.o)
 
 
-CFLAGS	+= -Wextra -Wall -Werror
+CFLAGS	+= -Wextra -Wall -Werror -g
 CFLAGS	+= -ansi -pedantic
 CFLAGS	+= -I headers
 CFLAGS	+= -I libmy

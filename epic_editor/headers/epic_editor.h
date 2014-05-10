@@ -16,6 +16,9 @@
 
 #define MAGIC_NUMBER "123"
 
+#define ERROR_HEADER "Learn to read idiot, your header is invalid\n"
+
+#include <unistd.h>
 #include <fcntl.h>
 #include <stdlib.h>
 #include <stdio.h>

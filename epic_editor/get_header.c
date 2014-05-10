@@ -5,25 +5,36 @@
 ** Login   <wilfried@epitech.net>
 ** 
 ** Started on  Sat May 10 10:38:45 2014 HENNUYER WILFRIED
-** Last update Sat May 10 11:11:21 2014 HENNUYER WILFRIED
+** Last update Sat May 10 11:46:16 2014 HENNUYER WILFRIED
 */
 
 #include <epic_editor.h>
-#include <unistd.h>
+
 int		write_header(t_header *header)
 {
-  int	fd;
+  int		fd;
+  int		nb;
 
-  fd = open(header->name, O_RDWR | O_CREAT, 00644);
+  if ((fd = open(header->name, O_RDWR | O_CREAT, 00644)) == 0)
+    {
+      my_puts("Fail open, try again.\n");
+      return (-1);
+    }
   write(fd, MAGIC_NUMBER, 3);
-  write(fd, &(1), 8);
-  write(fd, strlen(header->name), 8);
+  nb = 1;
+  write(fd, &nb, sizeof(char));
+  nb = strlen(header->name);
+  write(fd, &nb, sizeof(char));
   write(fd, header->name, strlen(header->name));
-  write(fd, 2, 8);
-  write(fd, strlen(header->win), 8);
+  nb = 2;
+  write(fd, &nb, sizeof(char));
+  nb = strlen(header->win);
+  write(fd, &nb, sizeof(char));
   write(fd, header->win, strlen(header->win));
-  write(fd, 3, 8);
-  write(fd, strlen(header->spawn), 8);
+  nb = 3;
+  write(fd, &nb, sizeof(char));
+  nb = strlen(header->spawn);
+  write(fd, &nb, sizeof(char));
   write(fd, header->spawn, strlen(header->spawn));
   return (fd);
 }
@@ -35,9 +46,17 @@ int		get_header(char *str)
 
   line = my_str_to_wordtab(str, "|");
   if (tab_len(line) != 3)
-    return (-1);
-  header.name = line[1];
-  header.win = line[2];
-  header.spawn = line[3];
+    {
+      my_puts(ERROR_HEADER);
+      return (-1);
+    }
+  if (strlen(line[0]) > 255 || strlen(line[1]) > 255 || strlen(line[2]) > 255)
+    {
+      my_puts("Too long Argument!\n");
+      return (-1);
+    }
+  header.name = line[0];
+  header.win = line[1];
+  header.spawn = line[2];
   return (write_header(&header));
 }
