@@ -5,7 +5,7 @@
 ** Login   <wilfried@epitech.net>
 ** 
 ** Started on  Sat May 10 15:23:33 2014 HENNUYER WILFRIED
-** Last update Sat May 10 16:37:31 2014 HENNUYER WILFRIED
+** Last update Sat May 10 17:10:29 2014 HENNUYER WILFRIED
 */
 
 #include <stdlib.h>
@@ -47,12 +47,12 @@ int		write_monster_next(char **line, int fd)
   nb = 6;
   write(fd, &nb, sizeof(char));
   nb = strlen(line[3]);
-  write(fd, &nb, sizeof(int));
+  write(fd, &nb, sizeof(char));
   write(fd, line[3], nb);
   nb = 7;
   write(fd, &nb, sizeof(char));
   nb = strlen(line[4]);
-  write(fd, &nb, sizeof(int));
+  write(fd, &nb, sizeof(char));
   write(fd, line[4], nb);
   nb = 8;
   write(fd, &nb, sizeof(char));
@@ -85,7 +85,7 @@ int		write_monster(char **line, int fd)
   nb = strlen(line[1]);
   write(fd, &nb, sizeof(char));
   write(fd, line[1], nb);
-  nb = 20;
+  nb = 0x20;
   write(fd, &nb, sizeof(char));
   nb = strlen(line[2]);
   write(fd, &nb, sizeof(char));

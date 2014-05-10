@@ -5,7 +5,7 @@
 ** Login   <wilfried@epitech.net>
 **
 ** Started on  Sat May 10 15:29:12 2014 HENNUYER WILFRIED
-** Last update Sat May 10 16:44:24 2014 HENNUYER WILFRIED
+** Last update Sat May 10 17:12:30 2014 HENNUYER WILFRIED
 */
 
 #include <stdlib.h>
@@ -43,7 +43,7 @@ int		write_room_next(char **line, int fd)
 {
   int		nb;
 
-  nb = 12;
+  nb = 0x12;
   write(fd, &nb, sizeof(char));
   nb = strlen(line[3]);
   write(fd, &nb, sizeof(char));
@@ -64,12 +64,12 @@ int		write_room(char **line, int fd)
   nb = strlen(line[0]);
   write(fd, &nb, sizeof(char));
   write(fd, line[0], nb);
-  nb = 10;
+  nb = 0x10;
   write(fd, &nb, sizeof(char));
   nb = strlen(line[1]);
   write(fd, &nb, sizeof(char));
   write(fd, line[1], nb);
-  nb = 11;
+  nb = 0x11;
   write(fd, &nb, sizeof(char));
   nb = strlen(line[2]);
   write(fd, &nb, sizeof(char));

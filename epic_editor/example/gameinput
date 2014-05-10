@@ -1,8 +1,13 @@
-TEST|ROOM1|ROOM2
+game1|room1|room2
 2
-TOTO|WARRIOR|50|50|50|10|NONE|NONE
+rick|warrior|50|40|30|50|none|none
 2
-TITI|WIZZARD|30|50|60|15|NONE|NONE
+js|summoner|50|50|40|30|none|none
 3
-ROOM1|0|ROOM2,ROOM3|WOLF,WOLF,JB
+buzz|60|80|60|40|none|none
+4
+room1|0|room2|buzz=lol
+4
+room2|0|room1|buzz
+0
 
