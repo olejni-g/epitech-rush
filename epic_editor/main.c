@@ -5,32 +5,25 @@
 ** Login        weisli_r
 **
 ** Started on   Sat May 10 00:41:46 2014 weisli_r
-** Update       Sat May 10 02:18:35 2014 weisli_r
+** Update       Sat May 10 10:35:52 2014 weisli_r
 */
 
 #include <stdlib.h>
-
-#include <my.h>
 #include <epic_editor.h>
-
-int		my_parse(char *s)
-{
-  my_printf("  %s\n", s);
-  return (0);
-}
 
 int		main()
 {
   char	*s;
+  char	**wordtab;
 
-  my_puts("Reading standard input");
-  while ((s = my_getline(0)))
+  my_puts("Welcome to the world editor");
+  my_puts("Enter game file name :");
+  s = my_getline(0);
+  wordtab = my_str_to_wordtab(s, "|");
+  while (wordtab[i])
   {
-	if (s[0] != '\n')
-	{
-	  my_parse(s);
-	}
-	free(s);
+	printf("%s\n", wordtab[i]);
+	i++;
   }
   return (0);
 }
