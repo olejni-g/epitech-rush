@@ -5,7 +5,7 @@
 ** Login        weisli_r
 **
 ** Started on   Sat May 10 02:11:28 2014 weisli_r
-** Update       Sat May 10 13:20:43 2014 weisli_r
+** Update       Sat May 10 14:32:20 2014 weisli_r
 */
 
 #define NRML "\033[0;0m"
@@ -16,25 +16,10 @@
 
 #define MAGIC_NUMBER 123
 
-#define ERROR_HEADER "   Learn to read idiot, your header is invalid"
-#define ERROR_CHAMP "   Learn to read idiot, your champ is invalid"
+#define ERR_TOOMANY	"   ERROR : Syntax is bad, read the help"
+#define ERR_LENGTH	"   ERROR : One of the argument is too long (MAX: 255)"
+#define ERR_OPEN	"   ERROR : Open failed to create the file, try again"
 
 #define LEN_CHAMP 8
 #define LEN_MONSTER 7
 #define LEN_ROOM 4
-
-#include <unistd.h>
-#include <fcntl.h>
-#include <stdlib.h>
-#include <stdio.h>
-#include <string.h>
-#include "../libmy/my.h"
-
-/*	get_header	*/
-
-int	get_header(char *);
-
-/*	get_champ	*/
-
-int	get_champ(char *, int);
-int	check_len_line(char **);

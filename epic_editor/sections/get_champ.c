@@ -25,7 +25,9 @@ int		check_len_line(char **line)
     {
       if (strlen(line[i]) > 255)
 	{
-	  my_puts("Too long Argument!");
+	  my_putstr(RED);
+      my_puts(ERR_LENGTH);
+	  my_putstr(NRML);
 	  return (-1);
 	}
     }
