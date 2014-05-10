@@ -5,7 +5,7 @@
 ** Login   <wilfried@epitech.net>
 ** 
 ** Started on  Sat May 10 15:23:33 2014 HENNUYER WILFRIED
-** Last update Sat May 10 16:24:09 2014 HENNUYER WILFRIED
+** Last update Sat May 10 16:31:49 2014 HENNUYER WILFRIED
 */
 
 #include <stdlib.h>
@@ -35,6 +35,7 @@ int		check_len_monster(char **line)
 	  my_putstr(NRML);
 	  return (-1);
 	}
+      i++;
     }
   return (0);
 }

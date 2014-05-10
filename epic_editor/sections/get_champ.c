@@ -5,7 +5,7 @@
 ** Login   <wilfried@epitech.net>
 ** 
 ** Started on  Sat May 10 11:52:34 2014 HENNUYER WILFRIED
-** Last update Sat May 10 16:21:47 2014 HENNUYER WILFRIED
+** Last update Sat May 10 16:31:23 2014 HENNUYER WILFRIED
 */
 
 #include <stdlib.h>
@@ -31,10 +31,11 @@ int		check_len_champ(char **line)
       if (strlen(line[i]) > 255)
 	{
 	  my_putstr(RED);
-      my_puts(ERR_LENGTH);
+	  my_puts(ERR_LENGTH);
 	  my_putstr(NRML);
 	  return (-1);
 	}
+      i++;
     }
   return (0);
 }
