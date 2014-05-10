@@ -5,7 +5,7 @@
 ** Login        weisli_r
 **
 ** Started on   Sat May 10 00:41:46 2014 weisli_r
-** Update       Sat May 10 13:19:53 2014 weisli_r
+** Update       Sat May 10 13:24:29 2014 weisli_r
 */
 
 #include <epic_editor.h>
@@ -39,6 +39,9 @@ int		create_header()
 
 void	read_option(char *s, int fd)
 {
+  if (fd)
+  {
+  }
   if (s[0] == '0')
 	exit(my_puts("   Goodbye !"));
   else if (s[0] == '1')
