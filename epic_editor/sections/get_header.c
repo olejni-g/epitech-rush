@@ -5,7 +5,7 @@
 ** Login       <hennuy_r@epitech.net>
 **
 ** Started on  Sat May 10 10:38:45 2014 HENNUYER WILFRIED
-** Last update Sat May 10 13:55:29 2014 HENNUYER WILFRIED
+** Last update Sat May 10 15:40:38 2014 HENNUYER WILFRIED
 */
 
 #include <stdlib.h>
@@ -54,13 +54,8 @@ int		write_header(char **line)
   nb = MAGIC_NUMBER;
   write(fd, &nb, sizeof(char));
   nb = 13;
-<<<<<<< HEAD
-  write(fd, &nb, 1);
-  write_header_next(line, fd);
-=======
   write(fd, &nb, sizeof(char));
   write_header_content(line, fd);
->>>>>>> dfa5edc2001ec115de51910feb67adc85b33a3e3
   return (fd);
 }
 
@@ -72,14 +67,14 @@ int		get_header(char *str)
   if (tab_len(line) != 3)
     {
 	  my_putstr(RED);
-      my_puts(ERR_TOOMANY);
+	  my_puts(ERR_TOOMANY);
 	  my_putstr(NRML);
 	  return (-1);
     }
   if (strlen(line[0]) > 255 || strlen(line[1]) > 255 || strlen(line[2]) > 255)
     {
 	  my_putstr(RED);
-      my_puts(ERR_LENGTH);
+	  my_puts(ERR_LENGTH);
 	  my_putstr(NRML);
       return (-1);
     }
