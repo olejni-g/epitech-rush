@@ -16,7 +16,12 @@
 
 #define MAGIC_NUMBER "123"
 
-#define ERROR_HEADER "Learn to read idiot, your header is invalid\n"
+#define ERROR_HEADER "Learn to read idiot, your header is invalid"
+#define ERROR_CHAMP "Learn to read idiot, your champ is invalid"
+
+#define LEN_CHAMP 8
+#define LEN_MONSTER 7
+#define LEN_ROOM 4
 
 #include <unistd.h>
 #include <fcntl.h>
@@ -63,4 +68,11 @@ typedef struct s_room
   char		*monsters;
 }t_room;
 
+/*	get_header	*/
+
 int	get_header(char *);
+
+/*	get_champ	*/
+
+int	get_champ(char *, int);
+int	check_len_line(char **);
