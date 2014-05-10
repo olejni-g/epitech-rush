@@ -23,7 +23,9 @@ int		check_len_champ(char **line)
 
   if (tab_len(line) != LEN_CHAMP)
     {
+	  my_putstr(RED);
       my_puts(ERR_TOOMANY);
+	  my_putstr(NRML);
       return (-1);
     }
   while (line[i])

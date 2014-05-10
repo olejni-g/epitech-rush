@@ -22,7 +22,9 @@ int		check_len_room(char **line)
   i = 0;
   if (tab_len(line) != LEN_ROOM)
     {
+	  my_putstr(RED);
       my_puts(ERR_TOOMANY);
+	  my_putstr(NRML);
       return (-1);
     }
   while (line[i])

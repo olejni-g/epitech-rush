@@ -23,7 +23,9 @@ int		check_len_monster(char **line)
 
   if (tab_len(line) != LEN_MONSTER)
     {
+	  my_putstr(RED);
       my_puts(ERR_TOOMANY);
+	  my_putstr(NRML);
       return (-1);
     }
   while (line[i])
