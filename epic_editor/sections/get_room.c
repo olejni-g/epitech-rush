@@ -5,7 +5,7 @@
 ** Login   <wilfried@epitech.net>
 **
 ** Started on  Sat May 10 15:29:12 2014 HENNUYER WILFRIED
-** Last update Sat May 10 16:31:38 2014 HENNUYER WILFRIED
+** Last update Sat May 10 16:36:57 2014 HENNUYER WILFRIED
 */
 
 #include <stdlib.h>
@@ -40,6 +40,20 @@ int		check_len_room(char **line)
   return (0);
 }
 
+int		write_room_next(char **line, int fd)
+{
+  int		nb;
+
+  nb = 12;
+  write(fd, &nb, sizeof(char));
+  nb = strlen(line[3]);
+  write(fd, &nb, sizeof(char));
+  write(fd, line[3], nb);
+  nb = 0x0A;
+  write(fd, &nb, sizeof(char));
+  return (0);
+}
+
 int		write_room(char **line, int fd)
 {
   int		nb;
@@ -61,11 +75,7 @@ int		write_room(char **line, int fd)
   nb = strlen(line[2]);
   write(fd, &nb, sizeof(char));
   write(fd, line[2], nb);
-  nb = 12;
-  write(fd, &nb, sizeof(char));
-  nb = strlen(line[3]);
-  write(fd, &nb, sizeof(char));
-  write(fd, line[3], nb);
+  write_room_next(line, fd);
   return (0);
 }
 

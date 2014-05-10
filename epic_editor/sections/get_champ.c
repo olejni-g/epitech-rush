@@ -5,7 +5,7 @@
 ** Login   <wilfried@epitech.net>
 ** 
 ** Started on  Sat May 10 11:52:34 2014 HENNUYER WILFRIED
-** Last update Sat May 10 16:31:23 2014 HENNUYER WILFRIED
+** Last update Sat May 10 16:35:21 2014 HENNUYER WILFRIED
 */
 
 #include <stdlib.h>
@@ -49,6 +49,8 @@ int		write_champ_next_next(char **line, int fd)
   nb = strlen(line[8]);
   write(fd, &nb, sizeof(char));
   write(fd, line[8], nb);
+  nb = 0x0A;
+  write(fd, &nb, sizeof(char));
   return (0);
 }
 

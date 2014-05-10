@@ -5,7 +5,7 @@
 ** Login       <hennuy_r@epitech.net>
 **
 ** Started on  Sat May 10 10:38:45 2014 HENNUYER WILFRIED
-** Last update Sat May 10 15:40:38 2014 HENNUYER WILFRIED
+** Last update Sat May 10 16:35:01 2014 HENNUYER WILFRIED
 */
 
 #include <stdlib.h>
@@ -36,6 +36,8 @@ int		write_header_content(char **line, int fd)
   nb = strlen(line[2]);
   write(fd, &nb, sizeof(char));
   write(fd, line[2], nb);
+  nb = 0x0A;
+  write(fd, &nb, sizeof(char));
   return (0);
 }
 
