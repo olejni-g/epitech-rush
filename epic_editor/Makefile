@@ -15,6 +15,7 @@ RM		= rm -f
 SRCS	= main.c				\
 		options.c				\
 		sections/get_header.c	\
+	sections/get_champ.c
 
 OBJS	= $(SRCS:.c=.o)
 
