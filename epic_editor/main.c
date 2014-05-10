@@ -5,10 +5,13 @@
 ** Login        weisli_r
 **
 ** Started on   Sat May 10 00:41:46 2014 weisli_r
-** Update       Sat May 10 13:19:53 2014 weisli_r
+** Update       Sat May 10 14:37:53 2014 weisli_r
 */
 
+#include <stdlib.h>
+#include <prototypes.h>
 #include <epic_editor.h>
+#include <my.h>
 
 void	print_help()
 {
@@ -17,40 +20,18 @@ void	print_help()
   my_puts("   4. Add a room");
 }
 
-int		create_header()
-{
-  int	fd;
-  char	*s;
-
-  while (42)
-  {
-	my_putstr("   Enter your header : ");
-	s = my_getline(0);
-	if (s[0] == '0')
-	  exit(my_puts("   Goodbye !"));
-	else if (s[0] == '1')
-	  my_puts("   Syntax : GAMEFILE|BOSS_ROOM|SPAWN_ROOM");
-	else
-	  if ((fd = get_header(s)) != -1)
-		return (fd);
-  }
-  return (0);
-}
-
 void	read_option(char *s, int fd)
 {
-  if (fd)
-    {}
   if (s[0] == '0')
 	exit(my_puts("   Goodbye !"));
   else if (s[0] == '1')
 	print_help();
   else if (s[0] == '2')
-	print_help();
+	create_champ(fd);
   else if (s[0] == '3')
-	print_help();
+	create_monster(fd);
   else if (s[0] == '4')
-	print_help();
+	create_room(fd);
 }
 
 int		main()
@@ -58,7 +39,7 @@ int		main()
   int	fd;
 
   my_puts("-- Welcome to the epic js fantasy world editor");
-  my_puts("-- \033[0;31m0 to quit, 1 to display the help\n\033[0;0m");
+  my_puts("-- \033[0;32m0 to quit, 1 to display the help\n\033[0;0m");
   fd = create_header();
   print_help();
   while (42)

@@ -1,16 +1,23 @@
 /*
 ** get_header.c for rush in /home/wilfried/rendu/rush/epitech-rush/epic_editor
-** 
-** Made by HENNUYER WILFRIED
-** Login   <wilfried@epitech.net>
-** 
+**
+** Made by     HENNUYER WILFRIED
+** Login       <hennuy_r@epitech.net>
+**
 ** Started on  Sat May 10 10:38:45 2014 HENNUYER WILFRIED
 ** Last update Sat May 10 13:55:29 2014 HENNUYER WILFRIED
 */
 
+#include <stdlib.h>
+#include <string.h>
+#include <unistd.h>
+#include <fcntl.h>
+#include <sys/types.h>
+#include <sys/stat.h>
 #include <epic_editor.h>
+#include <my.h>
 
-int		write_header_next(char **line, int fd)
+int		write_header_content(char **line, int fd)
 {
   int		nb;
 
@@ -39,14 +46,21 @@ int		write_header(char **line)
 
   if ((fd = open(line[0], O_RDWR | O_CREAT, 00644)) == 0)
     {
-      my_puts("Fail open.");
+	  my_putstr(RED);
+      my_puts(ERR_OPEN);
+	  my_putstr(NRML);
       return (-1);
     }
   nb = MAGIC_NUMBER;
   write(fd, &nb, sizeof(char));
   nb = 13;
+<<<<<<< HEAD
   write(fd, &nb, 1);
   write_header_next(line, fd);
+=======
+  write(fd, &nb, sizeof(char));
+  write_header_content(line, fd);
+>>>>>>> dfa5edc2001ec115de51910feb67adc85b33a3e3
   return (fd);
 }
 
@@ -57,12 +71,16 @@ int		get_header(char *str)
   line = my_str_to_wordtab(str, "|");
   if (tab_len(line) != 3)
     {
-      my_puts(ERROR_HEADER);
-      return (-1);
+	  my_putstr(RED);
+      my_puts(ERR_TOOMANY);
+	  my_putstr(NRML);
+	  return (-1);
     }
   if (strlen(line[0]) > 255 || strlen(line[1]) > 255 || strlen(line[2]) > 255)
     {
-      my_puts("Too long Argument!");
+	  my_putstr(RED);
+      my_puts(ERR_LENGTH);
+	  my_putstr(NRML);
       return (-1);
     }
   return (write_header(line));
