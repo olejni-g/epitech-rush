@@ -5,7 +5,7 @@
 ** Login   <wilfried@epitech.net>
 ** 
 ** Started on  Sat May 10 15:23:33 2014 HENNUYER WILFRIED
-** Last update Sat May 10 16:00:56 2014 HENNUYER WILFRIED
+** Last update Sat May 10 16:24:09 2014 HENNUYER WILFRIED
 */
 
 #include <stdlib.h>
@@ -45,22 +45,24 @@ int		write_monster_next(char **line, int fd)
 
   nb = 6;
   write(fd, &nb, sizeof(char));
-  nb = atoi(line[5]);
+  nb = strlen(line[3]);
   write(fd, &nb, sizeof(int));
+  write(fd, line[3], nb);
   nb = 7;
   write(fd, &nb, sizeof(char));
-  nb = atoi(line[6]);
+  nb = strlen(line[4]);
   write(fd, &nb, sizeof(int));
+  write(fd, line[4], nb);
   nb = 8;
   write(fd, &nb, sizeof(char));
-  nb = strlen(line[7]);
+  nb = strlen(line[5]);
   write(fd, &nb, sizeof(char));
-  write(fd, line[7], nb);
+  write(fd, line[5], nb);
   nb = 9;
   write(fd, &nb, sizeof(char));
-  nb = strlen(line[8]);
+  nb = strlen(line[6]);
   write(fd, &nb, sizeof(char));
-  write(fd, line[8], nb);
+  write(fd, line[6], nb);
   return (0);
 }
 
@@ -77,12 +79,14 @@ int		write_monster(char **line, int fd)
   write(fd, line[0], nb);
   nb = 5;
   write(fd, &nb, sizeof(char));
-  nb = atoi(line[1]);
-  write(fd, &nb, sizeof(int));
+  nb = strlen(line[1]);
+  write(fd, &nb, sizeof(char));
+  write(fd, line[1], nb);
   nb = 20;
   write(fd, &nb, sizeof(char));
-  nb = atoi(line[2]);
-  write(fd, &nb, sizeof(int));
+  nb = strlen(line[2]);
+  write(fd, &nb, sizeof(char));
+  write(fd, line[2], nb);
   write_monster_next(line, fd);
   return (0);
 }

@@ -5,7 +5,7 @@
 ** Login   <wilfried@epitech.net>
 ** 
 ** Started on  Sat May 10 11:52:34 2014 HENNUYER WILFRIED
-** Last update Sat May 10 15:59:46 2014 HENNUYER WILFRIED
+** Last update Sat May 10 16:21:47 2014 HENNUYER WILFRIED
 */
 
 #include <stdlib.h>
@@ -39,28 +39,43 @@ int		check_len_champ(char **line)
   return (0);
 }
 
-int		write_champ_next(char **line, int fd)
+int		write_champ_next_next(char **line, int fd)
 {
   int		nb;
 
-  nb = 6;
-  write(fd, &nb, sizeof(char));
-  nb = atoi(line[6]);
-  write(fd, &nb, sizeof(int));
-  nb = 7;
-  write(fd, &nb, sizeof(char));
-  nb = atoi(line[7]);
-  write(fd, &nb, sizeof(int));
-  nb = 8;
+  nb = 9;
   write(fd, &nb, sizeof(char));
   nb = strlen(line[8]);
   write(fd, &nb, sizeof(char));
   write(fd, line[8], nb);
-  nb = 9;
+  return (0);
+}
+
+int		write_champ_next(char **line, int fd)
+{
+  int		nb;
+
+  nb = 20;
   write(fd, &nb, sizeof(char));
-  nb = strlen(line[9]);
+  nb = strlen(line[3]);
   write(fd, &nb, sizeof(char));
-  write(fd, line[9], nb);
+  write(fd, line[3], nb);
+  nb = 6;
+  write(fd, &nb, sizeof(char));
+  nb = strlen(line[4]);
+  write(fd, &nb, sizeof(char));
+  write(fd, line[4], nb);
+  nb = 7;
+  write(fd, &nb, sizeof(char));
+  nb = strlen(line[5]);
+  write(fd, &nb, sizeof(char));
+  write(fd, line[5], nb);
+  nb = 8;
+  write(fd, &nb, sizeof(char));
+  nb = strlen(line[6]);
+  write(fd, &nb, sizeof(char));
+  write(fd, line[7], nb);
+  write_champ_next_next(line, fd);
   return (0);
 }
 
@@ -82,12 +97,9 @@ int		write_champ(char **line, int fd)
   write(fd, line[1], nb);
   nb = 5;
   write(fd, &nb, sizeof(char));
-  nb = atoi(line[2]);
-  write(fd, &nb, sizeof(int));
-  nb = 20;
+  nb = strlen(line[2]);
   write(fd, &nb, sizeof(char));
-  nb = atoi(line[3]);
-  write(fd, &nb, sizeof(int));
+  write(fd, line[2], nb);
   write_champ_next(line, fd);
   return (0);
 }
