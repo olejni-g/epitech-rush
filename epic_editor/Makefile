@@ -5,15 +5,15 @@
 ## Login        weisli_r
 ##
 ## Started on   Sat May 10 00:22:03 2014 weisli_r
-## Update       Sat May 10 15:24:42 2014 weisli_r
+## Update       Sat May 10 16:39:25 2014 weisli_r
 ##
 
 NAME	= epic_editor
 
 RM		= rm -f
 
-SRCS	= main.c			\
-	  options.c			\
+SRCS	= main.c				\
+	  options.c					\
 	  sections/get_header.c		\
 	  sections/get_champ.c		\
 	  sections/get_monster.c	\

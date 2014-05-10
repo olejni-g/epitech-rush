@@ -46,9 +46,9 @@ int		write_champ_next_next(char **line, int fd)
 
   nb = 9;
   write(fd, &nb, sizeof(char));
-  nb = strlen(line[8]);
+  nb = strlen(line[7]);
   write(fd, &nb, sizeof(char));
-  write(fd, line[8], nb);
+  write(fd, line[7], nb);
   nb = 0x0A;
   write(fd, &nb, sizeof(char));
   return (0);
@@ -77,7 +77,7 @@ int		write_champ_next(char **line, int fd)
   write(fd, &nb, sizeof(char));
   nb = strlen(line[6]);
   write(fd, &nb, sizeof(char));
-  write(fd, line[7], nb);
+  write(fd, line[6], nb);
   write_champ_next_next(line, fd);
   return (0);
 }
