@@ -5,7 +5,7 @@
 ** Login        weisli_r
 **
 ** Started on   Fri Oct 11 09:39:16 2013 weisli_r
-** Update       Sat May 10 02:01:46 2014 weisli_r
+** Update       Sat May 10 10:47:54 2014 weisli_r
 */
 
 #ifndef MY_H_
@@ -56,7 +56,8 @@ char	*my_strtoupper(char *);
 int		my_strncmp(const char *, const char *, int);
 int		my_strcmp(const char *, const char *);
 int		my_strlen(const char *);
-
 char	*my_revstr(char *);
+
+int		tab_len(char **);
 
 #endif /* !MY_H_ */
