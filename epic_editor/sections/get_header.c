@@ -5,7 +5,7 @@
 ** Login   <wilfried@epitech.net>
 ** 
 ** Started on  Sat May 10 10:38:45 2014 HENNUYER WILFRIED
-** Last update Sat May 10 13:27:14 2014 HENNUYER WILFRIED
+** Last update Sat May 10 13:55:29 2014 HENNUYER WILFRIED
 */
 
 #include <epic_editor.h>
@@ -45,7 +45,7 @@ int		write_header(char **line)
   nb = MAGIC_NUMBER;
   write(fd, &nb, sizeof(char));
   nb = 13;
-  write(fd, &nb, sizeof(char));
+  write(fd, &nb, 1);
   write_header_next(line, fd);
   return (fd);
 }
