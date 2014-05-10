@@ -5,19 +5,20 @@
 ## Login        weisli_r
 ##
 ## Started on   Sat May 10 00:22:03 2014 weisli_r
-## Update       Sat May 10 02:00:33 2014 weisli_r
+## Update       Sat May 10 11:28:18 2014 weisli_r
 ##
 
 NAME	= epic_editor
 
 RM		= rm -f
 
-SRCS	= main.c
+SRCS	= main.c \
+		get_header.c
 
 OBJS	= $(SRCS:.c=.o)
 
 
-CFLAGS	+= -Wextra -Wall -Werror
+CFLAGS	+= -Wextra -Wall -Werror -g
 CFLAGS	+= -ansi -pedantic
 CFLAGS	+= -I headers
 CFLAGS	+= -I libmy

@@ -5,7 +5,7 @@
 ** Login        weisli_r
 **
 ** Started on   Sat May 10 02:11:28 2014 weisli_r
-** Update       Sat May 10 02:17:44 2014 weisli_r
+** Update       Sat May 10 11:24:20 2014 weisli_r
 */
 
 #define NRML "\033[0;0m"
@@ -62,3 +62,5 @@ typedef struct s_room
   char		*connect;
   char		*monsters;
 }t_room;
+
+int	get_header(char *);
