@@ -5,27 +5,58 @@
 ** Login        weisli_r
 **
 ** Started on   Sat May 10 00:41:46 2014 weisli_r
-** Update       Sat May 10 11:23:38 2014 weisli_r
+** Update       Sat May 10 11:57:55 2014 weisli_r
 */
 
 #include <epic_editor.h>
+
+int		read_string()
+{
+  return (0);
+}
+
+void	read_option(char *s)
+{
+  if (s[0] == '0')
+  {
+  }
+  else if (s[0] == '1')
+  {
+  }
+  else if (s[0] == '2')
+  {
+  }
+  else if (s[0] == '3')
+  {
+  }
+  else if (s[0] == '4')
+  {
+	my_puts("Quitting the editor, goodbye !");
+	exit(0);
+  }
+}
 
 int		main()
 {
   int	fd;
   char	*s;
 
-  my_puts("-- Welcome to the world editor --\n");
-  my_puts("Waiting for game header");
-  while ((s = my_getline(0)) && (fd = get_header(s)) == -1);
-  while ((s = my_getline(0)))
+  my_puts("-- Welcome to the world editor\n");
+  my_puts("   Waiting for game header...");
+  my_puts("   Syntax : FILENAME|BOSS_ROOM|SPAWN_ROOM");
+  while ((s = my_getline(0)) && (fd = get_header(s)) == -1)
   {
-	if (s[0] == '4')
-	{
-	  exit(0);
-	}
-	my_putstr("$ ");
-
+	my_putstr("   $ ");
+  }
+  my_puts("\n   0. Display this menu");
+  my_puts("   1. Add a champion");
+  my_puts("   2. Add a monster");
+  my_puts("   3. Add a room");
+  my_puts("   4. Quit the editor\n");
+  while (42)
+  {
+	my_putstr("   $ ");
+	read_option(my_getline(0));
   }
   return (0);
 }
