@@ -5,7 +5,7 @@
 ** Login   <wilfried@epitech.net>
 ** 
 ** Started on  Sat May 10 10:38:45 2014 HENNUYER WILFRIED
-** Last update Sat May 10 11:46:16 2014 HENNUYER WILFRIED
+** Last update Sat May 10 12:00:02 2014 HENNUYER WILFRIED
 */
 
 #include <epic_editor.h>
@@ -17,7 +17,7 @@ int		write_header(t_header *header)
 
   if ((fd = open(header->name, O_RDWR | O_CREAT, 00644)) == 0)
     {
-      my_puts("Fail open, try again.\n");
+      my_puts("Fail open, try again.");
       return (-1);
     }
   write(fd, MAGIC_NUMBER, 3);
@@ -52,7 +52,7 @@ int		get_header(char *str)
     }
   if (strlen(line[0]) > 255 || strlen(line[1]) > 255 || strlen(line[2]) > 255)
     {
-      my_puts("Too long Argument!\n");
+      my_puts("Too long Argument!");
       return (-1);
     }
   header.name = line[0];
