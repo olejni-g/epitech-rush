@@ -9,15 +9,14 @@
 */
 
 #include <epic_editor.h>
-
+#include <unistd.h>
 int		write_header(t_header *header)
 {
-  int		fd;
+  int	fd;
 
   fd = open(header->name, O_RDWR | O_CREAT, 00644);
   write(fd, MAGIC_NUMBER, 3);
-  write(fd, 123, 8);
-  write(fd, 1, 8);
+  write(fd, &(1), 8);
   write(fd, strlen(header->name), 8);
   write(fd, header->name, strlen(header->name));
   write(fd, 2, 8);
@@ -31,9 +30,8 @@ int		write_header(t_header *header)
 
 int		get_header(char *str)
 {
-  int		fd;
   char		**line;
-  header_t	header;
+  t_header	header;
 
   line = my_str_to_wordtab(str, "|");
   if (tab_len(line) != 3)
