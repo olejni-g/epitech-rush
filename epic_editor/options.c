@@ -5,7 +5,7 @@
 ** Login        weisli_r
 **
 ** Started on   Sat May 10 13:36:00 2014 weisli_r
-** Update       Sat May 10 15:17:12 2014 weisli_r
+** Update       Sat May 10 16:19:35 2014 weisli_r
 */
 
 #include <stdlib.h>
@@ -40,7 +40,7 @@ int		create_header()
   return (0);
 }
 
-void	create_champ(int fd)
+int		create_champ(int fd)
 {
   char	*s;
 
@@ -57,15 +57,17 @@ void	create_champ(int fd)
 	}
 	else
 	{
-	  if ((fd = get_header(s)) != -1)
+	  if (get_champ(s, fd) != -1)
 	  {
 		my_puts("   Champion added !\n");
+		return (0);
 	  }
 	}
   }
+  return (0);
 }
 
-void create_monster(int fd)
+int		create_monster(int fd)
 {
   char	*s;
 
@@ -82,12 +84,14 @@ void create_monster(int fd)
 	}
 	else
 	{
-	  if ((fd = get_monster(s)) != -1)
+	  if ((fd = get_monster(s, fd)) != -1)
 	  {
 		my_puts("   Monster added !\n");
+		return (0);
 	  }
 	}
   }
+  return (0);
 }
 
 void create_room(int fd)
