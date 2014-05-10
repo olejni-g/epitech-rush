@@ -1,5 +1,5 @@
 /*
-** main.c for epic_editor in /home/closingin/documents/projects/epitech/rush_rpg/epic_editor
+** main.c for epic_editor in anywhere
 **
 ** Made by      Rémi WEISLINGER
 ** Login        weisli_r
@@ -25,12 +25,12 @@ int		main()
 
   my_puts("Reading standard input");
   while ((s = my_getline(0)))
-  {
-	if (s[0] != '\n')
+    {
+      if (s[0] != '\n')
 	{
 	  my_parse(s);
 	}
-	free(s);
-  }
+      free(s);
+    }
   return (0);
 }
