@@ -20,7 +20,7 @@ int		write_header(t_header *header)
       my_puts("Fail open, try again.");
       return (-1);
     }
-  write(fd, MAGIC_NUMBER, 3);
+  write(fd, MAGIC_NUMBER, sizeof(char));
   nb = 1;
   write(fd, &nb, sizeof(char));
   nb = strlen(header->name);

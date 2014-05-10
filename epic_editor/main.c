@@ -5,65 +5,64 @@
 ** Login        weisli_r
 **
 ** Started on   Sat May 10 00:41:46 2014 weisli_r
-** Update       Sat May 10 12:14:20 2014 weisli_r
+** Update       Sat May 10 13:19:53 2014 weisli_r
 */
 
 #include <epic_editor.h>
 
-int		read_string()
+void	print_help()
 {
+  my_puts("   2. Add a champion");
+  my_puts("   3. Add a monster");
+  my_puts("   4. Add a room");
+}
+
+int		create_header()
+{
+  int	fd;
+  char	*s;
+
+  while (42)
+  {
+	my_putstr("   Enter your header : ");
+	s = my_getline(0);
+	if (s[0] == '0')
+	  exit(my_puts("   Goodbye !"));
+	else if (s[0] == '1')
+	  my_puts("   Syntax : GAMEFILE|BOSS_ROOM|SPAWN_ROOM");
+	else
+	  if ((fd = get_header(s)) != -1)
+		return (fd);
+  }
   return (0);
 }
 
-void	read_option(char *s)
+void	read_option(char *s, int fd)
 {
-  static int	header = 0;
-
-  while 
-  if (!header && (s[0] == '0'))
-  {
-	my_puts("   Syntax : FILENAME|BOSS_ROOM|SPAWN_ROOM");
-	my_putstr("   $ ");
-	while ((s = my_getline(0)) && (fd = get_header(s)) == -1)
-	{
-	  my_putstr("   $ ");
-	}
-  }
+  if (s[0] == '0')
+	exit(my_puts("   Goodbye !"));
   else if (s[0] == '1')
-  {
-  }
+	print_help();
   else if (s[0] == '2')
-  {
-  }
+	print_help();
   else if (s[0] == '3')
-  {
-  }
+	print_help();
   else if (s[0] == '4')
-  {
-  }
-  else if (s[0] == '5')
-  {
-	my_puts("   Quitting the editor, goodbye !");
-	exit(0);
-  }
+	print_help();
 }
 
 int		main()
 {
   int	fd;
-  char	*s;
 
-  my_puts("-- Welcome to the world editor\n");
-  my_puts("\n   0. Create the header");
-  my_puts("   1. Add a champion");
-  my_puts("   2. Add a monster");
-  my_puts("   3. Add a room");
-  my_puts("   4. Display this menu");
-  my_puts("   5. Quit the editor\n");
+  my_puts("-- Welcome to the epic js fantasy world editor");
+  my_puts("-- \033[0;31m0 to quit, 1 to display the help\n\033[0;0m");
+  fd = create_header();
+  print_help();
   while (42)
   {
-	my_putstr("   $ ");
-	read_option(my_getline(0));
+	my_putstr("\n   $ ");
+	read_option(my_getline(0), fd);
   }
   return (0);
 }
