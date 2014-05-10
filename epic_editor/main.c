@@ -40,8 +40,12 @@ int		create_header()
 void	read_option(char *s, int fd)
 {
   if (fd)
+<<<<<<< HEAD
   {
   }
+=======
+    {}
+>>>>>>> 69f5b148fb8037b821da9f165549a7e7b5c3cee3
   if (s[0] == '0')
 	exit(my_puts("   Goodbye !"));
   else if (s[0] == '1')
