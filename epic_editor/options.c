@@ -5,7 +5,7 @@
 ** Login        weisli_r
 **
 ** Started on   Sat May 10 13:36:00 2014 weisli_r
-** Update       Sat May 10 16:33:13 2014 weisli_r
+** Update       Sat May 10 16:46:34 2014 weisli_r
 */
 
 #include <stdlib.h>
@@ -111,7 +111,7 @@ int	create_room(int fd)
 	}
 	else
 	{
-	  if (get_monster(s, fd) != -1)
+	  if (get_room(s, fd) != -1)
 	  {
 		my_puts("   Room created!\n");
 		return (0);
